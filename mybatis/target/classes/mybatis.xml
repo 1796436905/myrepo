@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTDConfig3.0//EN" "mybatis-3-config.dtd" >
+<configuration>
+  <environments default="devopment">
+    <environment id="devopment">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+      	<property name="driver" value="com.mysql.jdbc.Driver"/>
+      	<property name="url" value="jdbc:mysql://localhost:3306/ischool"/>
+      	<property name="username" value="root"/>
+      	<property name="password" value="root"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+  	<!-- class属性：用于导入mapper接口
+  		resource属性：用于导入classpath类路径下的sql映射文件
+  		url属性：用于导入文件系统中的sql映射文件
+  	 -->
+  	 <mapper resource="com/jbit/entity/user-mapper.xml"/>
+  </mappers>
+</configuration>
